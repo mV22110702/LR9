@@ -7,11 +7,6 @@ document.getElementById("userName2").innerText = prompt("Enter player 2 name:");
 scoreTable.style.setProperty("display","none");
 document.getElementById("hideRecords").style.setProperty("display","none");
 
-if(document.getElementById("userName1").innerText == "" || document.getElementById("userName2").innerText == ""){
-  alert("Incorrect one of player's names!");
-  document.getElementById("userName1").style.setProperty("display","hide");
-  document.getElementById("userName2").style.setProperty("display","hide");
-}
 
 document.getElementById("generator").addEventListener("mouseover",function (event){
   if(window.getComputedStyle(event.target, null).backgroundColor != "rgb(14, 227, 2)"){
@@ -35,14 +30,12 @@ document.getElementById("restart").addEventListener("mouseout",function (event){
 });
 
 document.getElementById("showRecords").addEventListener("click",function (){
-  alert("Hiding_1");
   document.getElementById("gameInterface").style.setProperty("display","none");
   scoreTable.style.removeProperty("display");
   document.getElementById("hideRecords").style.removeProperty("display");
 });
 
 document.getElementById("hideRecords").addEventListener("click",function (){
-  alert("Hiding_2");
   document.getElementById("gameInterface").style.removeProperty("display");
   scoreTable.style.setProperty("display","none");
   document.getElementById("hideRecords").style.setProperty("display","none");
