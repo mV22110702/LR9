@@ -14,19 +14,21 @@ if(document.getElementById("userName1").innerText == "" || document.getElementBy
 }
 
 document.getElementById("generator").addEventListener("mouseover",function (event){
-  event.target.style.setProperty("transition-duration","50ms");
+  if(window.getComputedStyle(event.target, null).backgroundColor != "rgb(14, 227, 2)"){
+  event.target.style.setProperty("transition-duration","100ms");
   event.target.style.setProperty("transition-timing-function","ease-in");
   event.target.style.setProperty("background-color","white");
-  
+  }
 });
 document.getElementById("restart").addEventListener("mouseover",function (event){
-  event.target.style.setProperty("transition-duration","50ms");
+  event.target.style.setProperty("transition-duration","100ms");
   event.target.style.setProperty("transition-timing-function","ease-in");
   event.target.style.setProperty("background-color","white");
   
 });
 document.getElementById("generator").addEventListener("mouseout",function (event){
   event.target.removeAttribute("style");
+  event.target.style.backgroundColor = "rgb(14, 227, 2)";
 });
 document.getElementById("restart").addEventListener("mouseout",function (event){
   event.target.removeAttribute("style");
@@ -42,6 +44,25 @@ document.getElementById("hideRecords").addEventListener("click",function (){
   document.getElementById("gameInterface").style.removeProperty("display");
   scoreTable.style.setProperty("display","none");
   document.getElementById("hideRecords").style.setProperty("display","none");
+});
+
+document.getElementById("showRecords").addEventListener("mouseover",function (event){
+  event.target.style.setProperty("transition-duration","100ms");
+  event.target.style.setProperty("transition-timing-function","ease-in");
+  event.target.style.setProperty("background-color","white");
+  
+});
+document.getElementById("hideRecords").addEventListener("mouseover",function (event){
+  event.target.style.setProperty("transition-duration","100ms");
+  event.target.style.setProperty("transition-timing-function","ease-in");
+  event.target.style.setProperty("background-color","white");
+  
+});
+document.getElementById("showRecords").addEventListener("mouseout",function (event){
+  event.target.removeAttribute("style");
+});
+document.getElementById("hideRecords").addEventListener("mouseout",function (event){
+  event.target.removeAttribute("style");
 });
 
 const userNumElement1 = document.getElementById("userNumber1");
@@ -110,6 +131,8 @@ document.getElementById("restart").addEventListener("click",() => {
   document.getElementById("userScore2").classList.remove("winner");
   document.getElementById("userScore1").classList.remove("loser");
   document.getElementById("userScore2").classList.remove("loser");
+  document.getElementById("generator").removeAttribute("disabled");
+  document.getElementById("generator").style.setProperty("backgroundColor","rgb(14, 227, 2)");
 });
 
 function genRandom(){
@@ -158,11 +181,13 @@ function incrementWinner(Rand1,Rand2){
         alert(`Player ${document.getElementById("userName1").innerText} won! Congratulations!`);
         document.getElementById("userScore1").classList.toggle("winner");
         document.getElementById("userScore2").classList.toggle("loser");
+        document.getElementById("generator").toggleAttribute("disabled");
    }
    else{
     alert(`Player ${document.getElementById("userName2").innerText} won! Congratulations!`);
     document.getElementById("userScore2").classList.toggle("winner");
     document.getElementById("userScore1").classList.toggle("loser");
+    document.getElementById("generator").toggleAttribute("disabled");
    }
   }
 }
