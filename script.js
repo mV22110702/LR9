@@ -35,12 +35,14 @@ document.getElementById("restart").addEventListener("mouseout",function (event){
 });
 
 document.getElementById("showRecords").addEventListener("click",function (){
+  alert("Hiding_1");
   document.getElementById("gameInterface").style.setProperty("display","none");
   scoreTable.style.removeProperty("display");
   document.getElementById("hideRecords").style.removeProperty("display");
 });
 
 document.getElementById("hideRecords").addEventListener("click",function (){
+  alert("Hiding_2");
   document.getElementById("gameInterface").style.removeProperty("display");
   scoreTable.style.setProperty("display","none");
   document.getElementById("hideRecords").style.setProperty("display","none");
@@ -62,7 +64,7 @@ document.getElementById("showRecords").addEventListener("mouseout",function (eve
   event.target.removeAttribute("style");
 });
 document.getElementById("hideRecords").addEventListener("mouseout",function (event){
-  event.target.removeAttribute("style");
+  event.target.style.removeProperty("background-color");
 });
 
 const userNumElement1 = document.getElementById("userNumber1");
