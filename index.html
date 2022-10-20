@@ -16,8 +16,9 @@
 </head>
 
 <body>
-  <div class="program">
-    <div class="gameInterface">
+  <div class="program" >
+    <button id="hideRecords">Game</button>
+    <div class="gameInterface" id="gameInterface">
       <div class="playerBoard1">
         <h1 id="userName1"></h1>
         <output id="userScore1">0</output>
@@ -27,6 +28,7 @@
       <div class="menu">
         <button id="generator">Generate</button>
         <button id="restart">Restart</button>
+        <button id="showRecords">Records</button>
       </div>
       <div class="playerBoard2">
         <h1 id="userName2"></h1>
@@ -34,9 +36,9 @@
         <div id="userNumber2"><img></div>
       </div>
     </div>
-    <table class="scoreBoard table table-striped table-hover table-bordered table-info">
-      <thead></thead>
-      <tbody></tbody>
+    <table class="scoreBoard table table-striped table-hover table-bordered table-primary table-responsive-sm">
+      <thead class="table-dark"></thead>
+      <tbody ></tbody>
     </table>
   </div>
 </body>
