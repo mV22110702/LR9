@@ -1,0 +1,136 @@
+-root {
+    --padding: 10vmax;
+  }
+  @keyframes hoverButton{
+    from{
+      filter:hue-rotate(0deg);
+    }
+    to{
+      filter:hue-rotate(360deg);
+    }
+  }
+  .winner{
+    box-shadow: inset 2px 2px 1000em rgb(64, 244, 112);
+    background-color: rgba(255,255,255,0);
+    transition-duration: 1000ms;
+  }
+  .loser{
+    box-shadow: inset 2px 2px 1000em rgb(255, 53, 53);
+    color:white;
+    background-color: rgba(255,255,255,0);
+    transition-duration: 1000ms;
+  }
+  body{
+    background-image: url('https://img.freepik.com/free-photo/green-slate_1205-377.jpg?1&w=996&t=st=1666216536~exp=1666217136~hmac=af85efd7e5a098b729093e7de5a35aec78cacfdd93fda2b4db33f96aa025dac1');
+    background-size: cover;
+
+    height:100vh;
+    width:100vw;
+    
+    padding:0 15vw;
+  }
+  div.program {
+    
+    font-size: 2em;
+    display:grid;
+    grid-column-gap: 5vmin;
+    grid-template-columns:2fr 1fr;
+    align-content:center;
+    align-items:center;
+  }
+  .gameInterface {
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    box-sizing: content-box;
+    width:min-content;
+    grid-template-areas: "board1 menu board2";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:3%;
+  }
+  .gameInterface::after{
+    padding-bottom:100%;
+  }
+  .playerBoard1,
+  .playerBoard2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 100%;
+    grid-row-gap:5%;
+    padding: var(--padding);
+  }
+  .playerBoard1{
+    grid-area:board1;
+  }
+  .playerBoard2{
+    grid-area:board2;
+  }
+  #userName1,
+  #userName2 {
+    margin-bottom:initial;
+    display:inline;
+    font-size: inherit;
+    font-weight: bolder;
+    text-align: center;
+  }
+  #userScore1,
+  #userScore2 {
+    text-align:center;
+    width:100%;
+    font-size: inherit;
+    border:initial;
+    border-radius: 8%;
+    background-color: aqua;
+  }
+  #userNumber1,
+  #userNumber2 {
+    padding-top:7vh;
+    box-sizing: content-box;
+    display:inline;
+    width:50vmin;
+    min-height: 15vh;
+    background-size: contain;
+    background-repeat: round;
+    border: 2px solid black;
+    border-radius: 5%;
+    height:0;
+    padding-bottom: 100%;
+  }
+  .menu{
+    width:100%;
+    
+    grid-area:menu;
+    display:grid;
+    grid-template-rows:repeat(2,min-content);
+    grid-row-gap:5%;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+  }
+  .menu button{
+    font-size:5vmax;
+    width:auto;
+    height:min-content;
+  }
+  .menu button::after{
+    padding-bottom: 100%;
+  }
+  #generator{
+    font-size: inherit;
+    border:initial;
+    border-radius: 8%;
+    background-color: lime;
+  }
+  #restart{
+    font-size: inherit;
+    border:initial;
+    border-radius: 8%;
+    background-color: aqua;
+  }
+  .scoreBoard{
+    margin-top:3em;
+    font-size:initial;
+    height:min-content;
+    justify-self:center;
+    align-self:start;
+  }
